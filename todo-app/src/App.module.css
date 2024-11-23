@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    padding: 20px 280px;
+}
+
+.saveTodoContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.button{
+    border-radius: 8px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    transition: .3s ease;
+}
+
+.button:hover{
+    color: black;
+    background-color: transparent;
+}
+
+.inputText{
+    padding: 10px 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+}
+
+.h1{
+    width: 100%;
+    font-size: 56px;
+    text-align: center;
+}
+
+.emptyArray{
+    width: 100%;
+    font-family: 56;
+    color: red;
+}
