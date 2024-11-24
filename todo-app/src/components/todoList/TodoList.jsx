@@ -54,6 +54,8 @@ const TodoList = () => {
         const updatedTodoList = [...todoList];
         updatedTodoList[index].checked = !updatedTodoList[index].checked;
         setTodoList(updatedTodoList);
+
+        localStorage.setItem('todos', JSON.stringify(updatedTodoList));
     };
 
     return (
