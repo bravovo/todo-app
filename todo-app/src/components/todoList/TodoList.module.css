@@ -1,33 +1,67 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.saveTodoContainer{
+.saveTodoContainer {
     width: 100%;
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-.button{
+.button {
     width: 25%;
     font-size: 24px;
     border-radius: 8px;
     color: white;
     background-color: black;
     border: 2px solid black;
-    transition: .3s ease;
+    transition: 0.5s ease;
 }
 
-.button:hover{
+.button:hover {
     color: black;
     background-color: transparent;
 }
 
-.inputText{
+@keyframes appearSmooth {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.buttonHidden {
+    opacity: 0;
+    animation-name: appearSmooth;
+}
+
+.clearCheckedButton {
+    opacity: 1;
+    margin-bottom: 20px;
+    height: 50px;
+    width: 30%;
+    font-size: 24px;
+    border-radius: 8px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    transition: 0.5s ease;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.clearCheckedButton:hover {
+    color: black;
+    background-color: transparent;
+}
+
+.inputText {
     font-size: 24px;
     width: 100%;
     padding: 10px 10px;
@@ -37,31 +71,44 @@
     color: black;
 }
 
-.h1{
+.emptyInput {
+    border: 2px solid red;
+}
+
+.h1 {
     width: 100%;
     font-size: 56px;
 }
 
-.emptyArray{
+.emptyArray {
     width: 100%;
     font-size: 56px;
     color: red;
 }
 
-.todoListContainer{
+.todoListContainer {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
 }
 
-.todoItemContainer{
+.todoItemContainer {
     font-size: 32px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     width: 100%;
+    height: auto;
 }
 
-.todoItemCheckBoxInput{
-    width: 50px;
+.todoItemCheckBoxInput {
+    max-width: 25px;
+    max-height: 25px;
+    height: 25px;
+    width: 25px;
+}
+
+.todoItemCheckBoxLabel {
+    width: 95%;
 }
