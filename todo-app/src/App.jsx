@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./App.module.css";
-import TodoList from "./components/todoList/TodoList";
+
+import { RouterProvider } from "react-router-dom";
+import { router } from './router/router';
 
 const App = () => {
     return (
         <div className={styles.container}>
-            <h1>Welcome to todo app!</h1>
-            <TodoList />
+            <RouterProvider router={router} />
         </div>
     );
 };

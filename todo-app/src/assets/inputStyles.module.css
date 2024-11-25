@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.saveContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.button {
+    width: 25%;
+    font-size: 24px;
+    border-radius: 8px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    transition: 0.5s ease;
+}
+
+.button:hover {
+    color: black;
+    background-color: transparent;
+}
+
+.inputText {
+    font-size: 24px;
+    width: 100%;
+    padding: 10px 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+}
+
+.emptyInput {
+    border: 2px solid red;
+}
+
+.h1 {
+    width: 100%;
+    font-size: 56px;
+}
+
+.emptyArray {
+    width: 100%;
+    font-size: 56px;
+    color: red;
+}
+

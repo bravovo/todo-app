@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from "./TodoList.module.css";
+import sharedStyles from "../../assets/inputStyles.module.css";
+import pageStyles from "./TodoList.module.css";
 
 const TodoList = () => {
     const [todoList, setTodoList] = useState([]);
@@ -59,47 +60,47 @@ const TodoList = () => {
     };
 
     return (
-        <div className={styles.container}>
-            <div className={styles.saveTodoContainer}>
+        <div className={sharedStyles.container}>
+            <div className={sharedStyles.saveContainer}>
                 <input
-                    className={`${styles.inputText} ${
-                        isTodoEmpty ? styles.emptyInput : styles.inputText
+                    className={`${sharedStyles.inputText} ${
+                        isTodoEmpty ? sharedStyles.emptyInput : sharedStyles.inputText
                     }`}
                     type="text"
                     placeholder="Enter what needs to be done"
                     onChange={handleChange}
                     value={todoValue}
                 />
-                <button className={styles.button} onClick={handleSave}>
+                <button className={sharedStyles.button} onClick={handleSave}>
                     Save todo
                 </button>
             </div>
-            <h1 className={styles.h1}>Your todos</h1>
+            <h1 className={sharedStyles.h1}>Your todos</h1>
             {fetchChecked() && (
                 <button
-                    className={`${styles.buttonHidden} ${styles.clearCheckedButton}`}
+                    className={`${pageStyles.buttonHidden} ${pageStyles.clearCheckedButton}`}
                     onClick={handleCheckedRemove}
                 >
                     Clear completed todos
                 </button>
             )}
-            <div className={styles.todoListContainer}>
+            <div className={pageStyles.todoListContainer}>
                 {todoList.length > 0 ? (
                     todoList.map((todo, index) => (
-                        <div key={index} className={styles.todoItemContainer}>
+                        <div key={index} className={pageStyles.todoItemContainer}>
                             <input
-                                className={styles.todoItemCheckBoxInput}
+                                className={pageStyles.todoItemCheckBoxInput}
                                 type="checkbox"
                                 checked={todo.checked}
                                 onChange={() => handleCheckChange(index)}
                             />
-                            <label className={styles.todoItemCheckBoxLabel}>
+                            <label className={pageStyles.todoItemCheckBoxLabel}>
                                 {todo.content}
                             </label>
                         </div>
                     ))
                 ) : (
-                    <p className={styles.emptyArray}>No todos yet!</p>
+                    <p className={sharedStyles.emptyArray}>No todos yet!</p>
                 )}
             </div>
         </div>
