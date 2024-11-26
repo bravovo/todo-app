@@ -56,7 +56,7 @@ const TodoList = () => {
         updatedTodoList[index].checked = !updatedTodoList[index].checked;
         setTodoList(updatedTodoList);
 
-        localStorage.setItem('todos', JSON.stringify(updatedTodoList));
+        localStorage.setItem("todos", JSON.stringify(updatedTodoList));
     };
 
     return (
@@ -64,7 +64,9 @@ const TodoList = () => {
             <div className={sharedStyles.saveContainer}>
                 <input
                     className={`${sharedStyles.inputText} ${
-                        isTodoEmpty ? sharedStyles.emptyInput : sharedStyles.inputText
+                        isTodoEmpty
+                            ? sharedStyles.emptyInput
+                            : sharedStyles.inputText
                     }`}
                     type="text"
                     placeholder="Enter what needs to be done"
@@ -87,7 +89,10 @@ const TodoList = () => {
             <div className={pageStyles.todoListContainer}>
                 {todoList.length > 0 ? (
                     todoList.map((todo, index) => (
-                        <div key={index} className={pageStyles.todoItemContainer}>
+                        <div
+                            key={index}
+                            className={pageStyles.todoItemContainer}
+                        >
                             <input
                                 className={pageStyles.todoItemCheckBoxInput}
                                 type="checkbox"
