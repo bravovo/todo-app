@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import styles from "./MainNav.module.css";
-
+import Footer from "../footer/Footer";
 const MainNav = () => {
     return (
         <div>
@@ -24,6 +24,7 @@ const MainNav = () => {
                 </NavLink>
             </div>
             <Outlet />
+            <Footer />
         </div>
     );
 };
