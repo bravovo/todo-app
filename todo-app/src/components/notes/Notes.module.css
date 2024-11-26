@@ -10,10 +10,19 @@
 .noteItemContainer{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 5px;
+}
+
+.noteItemInfo{
+    width: 75%;
+}
+
+.noteItemButton{
+    width: 20%;
+    padding: 10px 0;
 }
 
 .noteDate{
@@ -30,6 +39,7 @@
 }
 
 .noteContent{
+    max-width: 100%;
     font-size: 36px;
     margin: 0;
 }

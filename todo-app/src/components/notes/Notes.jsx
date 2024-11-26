@@ -47,12 +47,20 @@ const Notes = () => {
         setNoteValue("");
     };
 
+    const handleNoteDelete = (index) => {
+        const filteredNotes = notes.filter((_, id) => id !== index);
+        setNotes(filteredNotes);
+        localStorage.setItem("notes", JSON.stringify(filteredNotes));
+    };
+
     return (
         <div className={sharedStyles.container}>
             <div className={sharedStyles.saveContainer}>
                 <input
                     className={`${sharedStyles.inputText} ${
-                        isNoteEmpty ? sharedStyles.emptyInput : sharedStyles.inputText
+                        isNoteEmpty
+                            ? sharedStyles.emptyInput
+                            : sharedStyles.inputText
                     }`}
                     type="text"
                     placeholder="Enter what is in your mind"
@@ -72,13 +80,18 @@ const Notes = () => {
                                 key={index}
                                 className={pageStyles.noteItemContainer}
                             >
-                                <h2 className={pageStyles.noteDate}>
-                                    {note.date}
-                                </h2>
-                                <hr className={pageStyles.noteHr} />
-                                <p className={pageStyles.noteContent}>
-                                    {note.content}
-                                </p>
+                                <div className={pageStyles.noteItemInfo}>
+                                    <h2 className={pageStyles.noteDate}>
+                                        {note.date}
+                                    </h2>
+                                    <hr className={pageStyles.noteHr} />
+                                    <p className={pageStyles.noteContent}>
+                                        {note.content}
+                                    </p>
+                                </div>
+                                <button className={`${sharedStyles.button} ${pageStyles.noteItemButton}`} onClick={() => handleNoteDelete(index)}>
+                                    Delete note
+                                </button>
                             </div>
                         );
                     })
